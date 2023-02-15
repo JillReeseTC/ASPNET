@@ -14,12 +14,12 @@ namespace Testing
             _conn = conn;
         }
 
-        public IEnumerable<Product> GetAllProducts() 
+        public IEnumerable<Product> GetAllProducts()
         {
-            return _conn.Query<Product>("SELECT * FROM Products;");
+            return _conn.Query<Product>("SELECT * FROM products;");
         }
-
-        public System.Collections.IEnumerable<Product> GetAllProducts()
+    }
+        /*public System.Collections.IEnumerable<Product> GetAllProducts()
         {
             throw new System.NotImplementedException();
         }
@@ -28,5 +28,5 @@ namespace Testing
         {
             throw new System.NotImplementedException();
         }
-    }
+    } */
 }
