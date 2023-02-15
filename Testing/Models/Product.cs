@@ -1,6 +1,6 @@
 ﻿namespace Testing.Models
 {
-    public class Product
+    public class Product 
     {
         public Product() 
         {
