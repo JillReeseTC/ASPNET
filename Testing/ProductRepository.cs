@@ -15,9 +15,14 @@ namespace Testing
             _conn = conn;
         }
 
-        public IEnumerable<Product> GetAllProducts()
+        /*public IEnumerable<Product> GetAllProducts()
         {
             return _conn.Query<Product>("SELECT * FROM products;");
+        }*/
+
+        public Product GetProduct(int id)
+        {
+            return _conn.QuerySingle<Product>("SELECT * FROM products WHERE ProductID = @id", new { id = id });
         }
 
         System.Collections.Generic.IEnumerable<Product> IProductRepository.GetAllProducts()
@@ -25,10 +30,4 @@ namespace Testing
             return _conn.Query<Product>("SELECT * FROM products;");
         }
     }
-        /*
-        public Product GetProduct(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-    } */
 }
